@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice - DOM</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Menu Hamburguer - DOM</h1>
+    </header>
+    <button class="hamburguer">
+      <div class="bar"></div>
+    </button>
+    <aside class="panel-menu">
+      <ul class="menu">
+        <a href="#section-1" class="menu__link">Reloj Digital y Alarma Sonora</a>
+        <a href="#section-2" class="menu__link">Eventos del teclado</a>
+        <a href="#section-3" class="menu__link">CountDown</a>
+        <a href="#section-4" class="menu__link">Seccion 4</a>
+        <a href="#section-5" class="menu__link">Seccion 5</a>
+      </ul>
+    </aside>
+    <main class="wrapper">
+      <section class="section" id="section-1">
+        <h3>Reloj Digital y Alarma Sonora</h3>
+        <div class="btn-watch">
+          <button class="btn btn-start-watch">Iniciar Reloj</button>
+          <button class="btn btn-stop-watch">Detener reloj</button>
+          <button class="btn btn-start-sound">Iniciar Alarma</button>
+          <button class="btn btn-stop-sound">Detener Alarma</button>
+        </div>
+        <div class="clock"></div>
+      </section>
+      <section class="section" id="section-2">
+        <h3>Eventos del teclado</h3>
+        <div class="container-ball">
+          <div class="ball"></div>
+        </div>
+      </section>
+      <section class="section" id="section-3">
+        <h3>Countdown</h3>
+        <div class="countdown"></div>
+      </section>
+      <section class="section" id="section-4">
+        <h3>Seccion 4</h3>
+      </section>
+      <section class="section" id="section-5">
+        <h3>Seccion 5</h3>
+      </section>
+    </main>
+    <div class="moveToUp">
+      <i class="fas fa-chevron-up fa-2x"></i>
+    </div>
+    <div class="mood-dark-white">
+      <i class="far fa-moon fa-2x"></i>
+      <i class="fas fa-sun fa-2x hidden"></i>
+    </div>
+    <script src="app.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/9189002154.js" crossorigin="anonymous"></script>
+  </body>
+</html>

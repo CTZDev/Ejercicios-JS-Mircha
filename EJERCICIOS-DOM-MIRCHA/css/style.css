@@ -1,0 +1,242 @@
+/*Custom Properties*/
+:root {
+  --first-color: #f7df1e;
+  --second-color: #222;
+  --main-font: "Trebuchet MS", "Lucida Sans Unicode", Arial, sans-serif;
+  --font-size: 16px;
+  --max-width: 1200px;
+  --main-modal-color: rgba(247, 222, 30, 0.85);
+  --second-modal-color: rgba(34, 34, 34, 0.85);
+}
+
+/*Reset*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+  transition: all 0.5s ease-in;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*Style website*/
+.header {
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  background-color: var(--first-color);
+  color: var(--second-color);
+}
+
+.header h1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section {
+  padding: 2rem;
+  padding-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--max-width);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.section h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--second-modal-color);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 1;
+}
+
+.panel.is-active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.panel-btn {
+  padding: 0;
+  position: fixed;
+  z-index: 2;
+  bottom: 1vh;
+  right: 1vw;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--first-color);
+}
+
+.menu {
+  width: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+}
+
+.menu > .menu__link {
+  padding: 2.5rem;
+  text-decoration: none;
+  width: inherit;
+  display: block;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: all 0.3s ease;
+}
+
+.menu > .menu__link:hover {
+  font-weight: bold;
+  color: var(--second-color);
+  background-color: var(--main-modal-color);
+}
+
+/*RELOJ DIGITAL*/
+.btn-watch {
+  padding-bottom: 3rem;
+}
+
+.btn {
+  padding: 1rem;
+  font-size: var(--font-size);
+  font-weight: bold;
+  margin: 1rem 0.6rem;
+  border: 1px solid black;
+  border-radius: 6px;
+  box-shadow: 4px 4px 6px black;
+  cursor: pointer;
+  background-color: var(--first-color);
+  color: var(--second-color);
+}
+
+.watch-date {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+
+/*KEYWORDS*/
+.container-ball {
+  display: flex;
+  border: 4px solid var(--first-color);
+  min-height: 50vh;
+  margin: 0 50px;
+  background-color: var(--second-modal-color);
+}
+
+.ball {
+  margin: auto;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: var(--first-color);
+}
+
+/*COUNTDOWN*/
+.countdown {
+  font-size: 1.6rem;
+  font-weight: bold;
+  background-color: var(--first-color);
+  padding: 1.6rem;
+  width: max-content;
+  margin: 0 auto;
+  color: var(--second-color);
+}
+
+/*BTN SCROLL TOP*/
+.scroll-top-btn {
+  position: fixed;
+  bottom: 1vh;
+  right: calc(4.25rem + 1vw);
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: var(--first-color);
+  color: var(--second-color);
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+}
+
+.scroll-top-btn:hover {
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*BTN DARK THEME*/
+.dark-theme-btn {
+  position: fixed;
+  bottom: 1vh;
+  left: 1vw;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: var(--first-color);
+  color: var(--second-color);
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+}
+
+.dark-theme-btn:hover,
+.dark-mode {
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+
+.dark-mode {
+  transition: all 0.5s ease-in;
+}

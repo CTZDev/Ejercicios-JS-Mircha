@@ -1,0 +1,298 @@
+/*Custom Properties*/
+:root {
+  --first-color: #f7df1e;
+  --second-color: #222;
+  --main-font: "Trebuchet MS", "Lucida Sans Unicode", Arial, sans-serif;
+  --font-size: 16px;
+  --max-width: 1400px;
+  --main-modal-color: rgba(247, 222, 30, 0.85);
+  --second-modal-color: rgba(34, 34, 34, 0.85);
+}
+
+/*Reset*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*Components = Menus , botones , keyframes, etc*/
+
+/*Utilities*/
+.none {
+  display: none;
+}
+
+/*Style Website*/
+.header {
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  background-color: var(--first-color);
+  color: var(--second-color);
+}
+
+.header h1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: repeat(5, 100vh);
+  background-color: #fff;
+  transition: all 0.3s ease-in;
+}
+
+.section {
+  padding-top: 4rem;
+  text-align: center;
+}
+
+.section > h3 {
+  font-size: 2.12rem;
+  text-align: center;
+}
+
+/*MENU HAMBURGUER*/
+.hamburguer {
+  display: block;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 2;
+}
+
+.hamburguer .bar,
+.hamburguer::before,
+.hamburguer::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  margin: 5px 0;
+  transition: 0.5s ease-in;
+}
+
+.hamburguer .bar {
+  width: 60%;
+}
+
+.hamburguer::after {
+  width: 85%;
+}
+
+.hamburguer.is-active::before {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburguer.is-active::after {
+  transform: rotate(45deg) translate(-6px, -7px);
+  width: 100%;
+}
+
+.hamburguer.is-active > .bar {
+  opacity: 0;
+  width: 100%;
+}
+
+/*MENU COLLPASED*/
+.panel-menu {
+  position: fixed;
+  width: 100%;
+  top: 48px;
+  bottom: 0;
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+}
+
+.panel-menu.is-active {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--second-modal-color);
+  color: var(--main-modal-color);
+}
+
+.menu > .menu__link {
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 2.5rem;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+
+.menu > .menu__link:hover {
+  color: black;
+  background-color: var(--first-color);
+}
+
+/*RELOJ DIGITAL*/
+.btn-watch {
+  padding-bottom: 3rem;
+}
+
+.btn {
+  padding: 1rem;
+  font-size: var(--font-size);
+  font-weight: bold;
+  margin: 1rem 0.6rem;
+  border: 1px solid black;
+  border-radius: 6px;
+  box-shadow: 4px 4px 6px black;
+  cursor: pointer;
+  background-color: var(--first-color);
+  color: var(--second-color);
+}
+
+.watch-date {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+
+/*KEYWORDS*/
+.container-ball {
+  display: flex;
+  border: 4px solid var(--first-color);
+  min-height: 50vh;
+  margin: 0 50px;
+  background-color: var(--second-modal-color);
+}
+
+.ball {
+  margin: auto;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: var(--first-color);
+}
+
+/*COUNTDOWN*/
+.countdown {
+  font-size: 1.6rem;
+  font-weight: bold;
+  background-color: var(--first-color);
+  padding: 1.6rem;
+  width: max-content;
+  margin: 0 auto;
+  color: var(--second-color);
+}
+
+/*MOVE UP*/
+.moveToUp {
+  position: fixed;
+  right: 130px;
+  bottom: 50px;
+  background-color: var(--first-color);
+  color: var(--second-color);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in;
+}
+
+.moveToUp:hover {
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+
+.moveToUp.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*MOOD - DARK -WHITE*/
+.mood-dark-white {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  background-color: var(--first-color);
+  color: var(--second-color);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  z-index: 2;
+  transition: all 0.4s ease-in;
+  cursor: pointer;
+}
+
+.mood-dark-white:hover {
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+
+.mood-dark-white > .fas,
+.mood-dark-white > .far {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.6rem;
+}
+
+.wrapper.is-active {
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+
+.mood-dark-white > .hidden {
+  opacity: 0;
+  visibility: hidden;
+}
