@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-dark>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Practice - DOM</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body data-dark>
     <header class="header">
       <h1>Menu Hamburguer - DOM</h1>
     </header>
@@ -18,9 +20,22 @@
       <ul class="menu">
         <a href="#section-1" class="menu__link">Reloj Digital y Alarma Sonora</a>
         <a href="#section-2" class="menu__link">Eventos del teclado</a>
-        <a href="#section-3" class="menu__link">CountDown</a>
-        <a href="#section-4" class="menu__link">Seccion 4</a>
-        <a href="#section-5" class="menu__link">Seccion 5</a>
+        <a href="#section-3" class="menu__link">Countdown</a>
+        <a href="#section-4" class="menu__link">Responsive con JavaScript</a>
+        <a href="#section-5" class="menu__link">Responsive Tester</a>
+        <a href="#section-6" class="menu__link"
+          >Deteccion de Dispositivos<br />
+          User Agent
+        </a>
+        <a href="#section-7" class="menu__link">Deteccion de la conexion</a>
+        <a href="#section-8" class="menu__link">Deteccion de la camara WEB</a>
+        <a href="#section-9" class="menu__link">Geolocalización</a>
+        <a href="#section-10" class="menu__link">Filtros de Busqueda</a>
+        <a href="#section-11" class="menu__link">Sorteo Digital</a>
+        <a href="#section-12" class="menu__link">Responsive Slider</a>
+        <a href="#section-13" class="menu__link">Filtros de Busqueda</a>
+        <a href="#section-14" class="menu__link">Filtros de Busqueda</a>
+        <a href="#section-15" class="menu__link">Filtros de Busqueda</a>
       </ul>
     </aside>
     <main class="wrapper">
@@ -45,19 +60,107 @@
         <div class="countdown"></div>
       </section>
       <section class="section" id="section-4">
-        <h3>Seccion 4</h3>
+        <h3>Responsive con JavaScript</h3>
+        <div id="r-youtube"></div>
+        <div id="r-gmaps"></div>
       </section>
       <section class="section" id="section-5">
-        <h3>Seccion 5</h3>
+        <h3>Responsive Tester</h3>
+        <form id="form-responsive">
+          <label for="txtUrl">Url del contenido</label>
+          <input type="url" id="txtUrl" placeholder="URL" /><br />
+          <label for="txtwidth">Ancho de ventana</label>
+          <input type="number" id="txtwidth" placeholder="Ancho" /><br />
+          <label for="txtheight">Altura de ventana</label>
+          <input type="number" id="txtheight" placeholder="Altura" /><br />
+          <button type="submit">Probar</button>
+          <button type="button" id="btnClose">Cerrar</button>
+        </form>
+      </section>
+      <section class="section" id="section-6">
+        <h3>
+          Deteccion de Dispositivos<br />
+          User Agent
+        </h3>
+        <div id="device-info"></div>
+      </section>
+      <section class="section" id="section-7">
+        <h3>Deteccion de la conexion</h3>
+        <div id="message-connection" class="connection"></div>
+      </section>
+      <section class="section" id="section-8">
+        <h3>Deteccion de la camara WEB</h3>
+        <video id="camera-web"></video>
+      </section>
+      <section class="section" id="section-9">
+        <h3>Geolocalización</h3>
+        <div id="geolocation"></div>
+      </section>
+      <section class="section" id="section-10">
+        <h3>Filtros de Busqueda</h3>
+        <input type="search" id="txtsearch" placeholder="Buscar ..." />
+        <article class="cards"></article>
+      </section>
+      <section class="section" id="section-11">
+        <h3>Sorteo Digital</h3>
+        <button type="button" id="btnWinner">Obtener ganador</button>
+      </section>
+      <section class="section" id="section-12">
+        <h3>Responsive Slider</h3>
+        <div class="slider-container">
+          <div class="slider">
+            <div class="slide">
+              <img src="./assets/img/chulpan-gallyamova-IRaP12RxQVU-unsplash.jpg" alt="Plantas" />
+            </div>
+            <div class="slide">
+              <h2>2</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit vitae, nobis beatae expedita doloremque rem, blanditiis temporibus porro
+                reprehenderit ab odit vel? Amet, dicta omnis sunt quam accusantium quidem ex?Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Inventore amet sed mollitia quis doloribus suscipit impedit, dolores ullam cum ab. Sit consequatur tempora officiis quod, blanditiis
+                ut repudiandae consectetur facilis!
+              </p>
+            </div>
+            <div class="slide">
+              <img src="./assets/img/imaad-whd-ilKx6ECw4f0-unsplash.jpg" alt="Bosque con paisaje gris" />
+            </div>
+            <div class="slide">
+              <h2>4</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reprehenderit architecto dolorum sunt harum accusantium perferendis
+                iusto, totam quod necessitatibus temporibus cumque delectus atque
+              </p>
+            </div>
+          </div>
+          <i class="fas fa-chevron-circle-left left"></i>
+          <i class="fas fa-chevron-circle-right right"></i>
+        </div>
+      </section>
+      <section class="section" id="section-13">
+        <h3>GeolocalizaciónA</h3>
+      </section>
+      <section class="section" id="section-14">
+        <h3>GeolocalizaciónB</h3>
+      </section>
+      <section class="section" id="section-15">
+        <h3>GeolocalizaciónC</h3>
       </section>
     </main>
     <div class="moveToUp">
       <i class="fas fa-chevron-up fa-2x"></i>
     </div>
-    <div class="mood-dark-white">
+    <div class="dark-theme">
       <i class="far fa-moon fa-2x"></i>
       <i class="fas fa-sun fa-2x hidden"></i>
     </div>
+    <template id="template-card">
+      <div class="card">
+        <img src="" alt="" />
+        <div class="card-body">
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </template>
     <script src="app.js" type="module"></script>
     <script src="https://kit.fontawesome.com/9189002154.js" crossorigin="anonymous"></script>
   </body>

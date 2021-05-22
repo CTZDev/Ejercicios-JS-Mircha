@@ -43,6 +43,7 @@ img {
   padding: 1rem;
   background-color: var(--first-color);
   color: var(--second-color);
+  z-index: 1;
 }
 
 .header h1 {
@@ -78,6 +79,7 @@ img {
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.4s ease;
   z-index: 1;
+  overflow-y: auto;
 }
 
 .panel.is-active {
@@ -105,7 +107,6 @@ img {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 0;
@@ -239,4 +240,169 @@ img {
 
 .dark-mode {
   transition: all 0.5s ease-in;
+}
+
+/*NETWORK STATUS*/
+.online,
+.offline {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #1b5e20;
+  color: #fff;
+}
+
+.offline {
+  background-color: #b71c1c;
+}
+
+/*SEARCH FILTER*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background-color: var(--second-color);
+  color: var(--first-color);
+  transition: all 0.3s ease-out;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card figcaption {
+  padding: 1rem;
+}
+
+.filter {
+  opacity: 0;
+  visibility: hidden;
+  order: 1;
+}
+
+/*SLIDER*/
+.slider {
+  position: relative;
+  width: 80%;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.slider-slides {
+  position: relative;
+  height: 400px;
+}
+
+.slider-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+}
+
+.slider-slide img {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.slider-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider-btns {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.slider a {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: thin solid #000;
+  text-decoration: none;
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.slider a:hover {
+  color: #4d4d4d;
+}
+
+/**********.....ScrollSpy.....**********/
+@media screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 4rem auto;
+    grid-template-areas:
+      "header header"
+      "main   panel";
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  .panel {
+    grid-area: panel;
+    align-self: start;
+    justify-content: flex-start;
+    position: sticky;
+    transform: translate(0, 0);
+    top: 4rem;
+    opacity: 1;
+    visibility: visible;
+    background-color: var(--second-color);
+  }
+
+  .panel-btn {
+    display: none;
+  }
+
+  .menu {
+    justify-content: start;
+    text-align: right;
+  }
+
+  .menu .menu__link:hover,
+  .menu .menu__link.active {
+    color: var(--second-color);
+    background-color: var(--first-color);
+  }
+
+  .menu .menu__link {
+    font-size: 1.1rem;
+    padding: 1.2rem;
+  }
+
+  /*move To Up*/
+  .scroll-top-btn {
+    right: initial; /*Resetear la propiedad por defecto (Toma valor inicial de duicho valor)*/
+    left: calc(4.25rem + 1vw);
+  }
 }
