@@ -175,8 +175,7 @@ li {
 
 .btn {
   padding: 1rem;
-  font-size: var(--font-size);
-  font-weight: bold;
+  font: bold 1.3em var(--main-font);
   margin: 1rem 0.6rem;
   border: 1px solid black;
   border-radius: 6px;
@@ -423,6 +422,93 @@ li {
   right: 25px;
 }
 
+/*FORM - VALIDITY*/
+.contact-form {
+  --form-error-color: red;
+  --form-ok-color: green;
+  width: 80%;
+  margin: auto;
+}
+
+.contact-form legend,
+.contact-form-response {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.input-group-text {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: baseline;
+  margin: 0.4rem auto;
+}
+
+.input-group-text textarea {
+  resize: none;
+}
+
+.input-control {
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  font-family: var(--main-font);
+  border: 2px solid black;
+}
+
+.input-group-text > div {
+  grid-column: 2 / -1;
+  margin: 0;
+  padding: 0.6rem;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-top: 0;
+}
+
+.contact-form [required]:valid {
+  border: 2px solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid {
+  border: 2px solid var(--form-error-color);
+}
+
+.btn--send {
+  width: 50%;
+}
+
+/*NARRATOR - SOUND*/
+.narrator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+.narrator > * {
+  padding: 0.6rem;
+  margin: 0.6rem;
+}
+
+.narrator select[name="narrator-select"],
+.narrator textarea {
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: var(--main-font);
+}
+
+.narrator [type="button"] {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1rem;
+}
+
 /*MEDIA QUERIE - 1024px*/
 @media screen and (min-width: 1024px) {
   /*menu responsive*/
@@ -454,5 +540,15 @@ li {
   /*Move To Up*/
   .moveToUp {
     left: 130px;
+  }
+
+  .input-group-text {
+    display: grid;
+    grid-template-columns: 20% 60%;
+    grid-template-rows: auto;
+    justify-content: center;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    font-family: var(--main-font);
   }
 }

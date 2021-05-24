@@ -33,9 +33,9 @@
         <a href="#section-10" class="menu__link">Filtros de Busqueda</a>
         <a href="#section-11" class="menu__link">Sorteo Digital</a>
         <a href="#section-12" class="menu__link">Responsive Slider</a>
-        <a href="#section-13" class="menu__link">Filtros de Busqueda</a>
-        <a href="#section-14" class="menu__link">Filtros de Busqueda</a>
-        <a href="#section-15" class="menu__link">Filtros de Busqueda</a>
+        <a href="#section-13" class="menu__link">Video Inteligente (Intersection Observer & VisibilityChange)</a>
+        <a href="#section-14" class="menu__link">Formulario de Contacto (Validaciones)</a>
+        <a href="#section-15" class="menu__link">Narrador de Voz</a>
       </ul>
     </aside>
     <main class="wrapper">
@@ -137,13 +137,79 @@
         </div>
       </section>
       <section class="section" id="section-13">
-        <h3>GeolocalizaciónA</h3>
+        <h3>Video Inteligente (Intersection Observer & VisibilityChange)</h3>
+        <video src="./assets/video/retro-vapor-wave-abstract-live-wallpaper.mp4" controls muted width="80%" height="80%" data-video></video>
       </section>
       <section class="section" id="section-14">
-        <h3>GeolocalizaciónB</h3>
+        <h3>Formulario de Contacto (Validaciones)</h3>
+        <form class="contact-form" action="https://formsubmit.co/your@email.com" method="POST">
+          <legend>Envianos tus Comentarios</legend>
+          <div class="input-group-text">
+            <label for="txtname">Nombres: </label>
+            <input
+              type="text"
+              id="txtname"
+              class="input-control"
+              placeholder="Nombres Completos"
+              title="Nombres solo acepta letras y espacios en blanco"
+              pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+              required
+            />
+          </div>
+          <div class="input-group-text">
+            <label for="txtemail">Email: </label>
+            <input
+              type="email"
+              id="txtemail"
+              class="input-control"
+              placeholder="Correo electronico"
+              title="El correo electronico ingresado debe ser correcto"
+              pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+              required
+            />
+          </div>
+          <div class="input-group-text">
+            <label for="txtaffair">Asunto: </label>
+            <input
+              type="text"
+              id="txtaffair"
+              class="input-control"
+              placeholder="Asunto a tratar"
+              title="El asunto debe tener como maximo 50 caracteres"
+              required
+            />
+          </div>
+          <div class="input-group-text">
+            <label for="txtcomment">Comentarios: </label>
+            <textarea
+              id="txtcomment"
+              class="input-control"
+              cols="30"
+              rows="10"
+              placeholder="Ingresa tus comentarios"
+              title="Los comentarios deben tener como maximo 255 caracteres"
+              required
+            ></textarea>
+          </div>
+          <input type="submit" class="btn btn--send" value="Enviar" />
+          <div class="contact-form-response none">
+            <p>Los datos han sido enviados satisfactoriamente</p>
+          </div>
+          <div class="contact-form-loader none">
+            <img src="./assets/puff.svg" alt="Cargando datos del formulario" />
+          </div>
+        </form>
       </section>
       <section class="section" id="section-15">
-        <h3>GeolocalizaciónC</h3>
+        <h3>Narrador de Voz</h3>
+
+        <div class="narrator">
+          <select name="narrator-select" title="Narrador de voz">
+            <option value="narrator-option">Seleccione una voz ---</option>
+          </select>
+          <textarea name="narrator-text" cols="30" rows="10" placeholder="Ingresa texto para leerlo"></textarea>
+          <button class="speech-btn">Leer texto</button>
+        </div>
       </section>
     </main>
     <div class="moveToUp">

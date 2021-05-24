@@ -31,9 +31,9 @@
         <a href="#section-10" class="menu__link" data-scroll-spy>Filtros de Busqueda</a>
         <a href="#section-11" class="menu__link" data-scroll-spy>Sorteo Digital</a>
         <a href="#section-12" class="menu__link" data-scroll-spy>Responsive Slider</a>
-        <a href="#section-13" class="menu__link" data-scroll-spy>Responsive Tester</a>
-        <a href="#section-14" class="menu__link" data-scroll-spy>Responsive Tester</a>
-        <a href="#section-15" class="menu__link" data-scroll-spy>Responsive Tester</a>
+        <a href="#section-13" class="menu__link" data-scroll-spy>Video Inteligente (Intersection Observer & VisibilityChange)</a>
+        <a href="#section-14" class="menu__link" data-scroll-spy>Validacion de Formulario</a>
+        <a href="#section-15" class="menu__link" data-scroll-spy>Narrador</a>
       </nav>
     </aside>
     <main>
@@ -171,13 +171,65 @@
         </div>
       </section>
       <section class="section" data-scroll-spy id="section-13">
-        <h3>Filtros de Busqueda</h3>
+        <h3>Video Inteligente (Intersection Observer & VisibilityChange)</h3>
+        <video
+          src="./assets/video/retro-vapor-wave-abstract-live-wallpaper.mp4"
+          muted
+          controls
+          loop
+          data-media-video
+          width="80%"
+          height="80%"
+        ></video>
       </section>
       <section class="section" data-scroll-spy id="section-14">
-        <h3>Filtros de Busqueda</h3>
+        <h3>Validacion de Formulario</h3>
+        <form class="contact-form" action="https://formsubmit.co/carlosteranzavaleta@hotmail.com" method="POST" target="_blank">
+          <legend>Envianos tus comentarios</legend>
+          <input
+            type="text"
+            name="name"
+            placeholder="Escribe tu nombre"
+            title="Nombre, solo acepta letras y espacios en blanco"
+            pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+            placeholder="Escribe tu correo electronico"
+            title="El correo electronico debe ser valido"
+            required
+          />
+          <input type="text" name="subject" placeholder="Asunto a tratar" title="El asunto es requerido" required />
+          <textarea
+            name="comments"
+            cols="30"
+            rows="10"
+            placeholder="Escribe tus comentarios"
+            data-pattern="^.{1,255}$"
+            title="Tu comentario no debe exceder los 255 caracteres"
+            required
+          ></textarea>
+          <input type="submit" value="Enviar" />
+          <div class="contact-form-loader none">
+            <img src="./assets/puff.svg" alt="Cargando" />
+          </div>
+          <div class="contact-form-response none">
+            <p>Los datos han sido enviados satisfactoriamente</p>
+          </div>
+        </form>
       </section>
       <section class="section" data-scroll-spy id="section-15">
-        <h3>Filtros de Busqueda</h3>
+        <h3>Narrador</h3>
+        <select id="speech-select">
+          <option value="">Elige una voz---</option>
+        </select>
+        <br /><br />
+        <textarea id="speech-text" cols="30" rows="10" placeholder="Ingresa texto para leerlo"></textarea>
+        <br /><br />
+        <button id="speech-btn">Leer texto</button>
       </section>
     </main>
     <button class="scroll-top-btn hidden">&#11014;</button>

@@ -14,6 +14,9 @@ import searchFilters from "./js/filter_default.js";
 import draw from "./js/digital_draw.js";
 import slider from "./js/carrousel.js";
 import scrollSpy from "./js/scrollSpy.js";
+import smartVideo from "./js/video_intelligent.js";
+import contactFormValidation from "./js/form_validity.js";
+import speechReader from "./js/narrator.js";
 
 document.addEventListener("DOMContentLoaded", (e) => {
   //1°param : Boton de Hamburguesa , 2°param: Panel o aside del menu , 3°param: Enlace de cada menu
@@ -50,6 +53,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
   draw("#winner-btn", ".player");
   slider();
   scrollSpy();
+  smartVideo();
+  contactFormValidation();
 });
 
 document.addEventListener("keydown", (e) => {
@@ -59,3 +64,4 @@ document.addEventListener("keydown", (e) => {
 
 darkTheme(".dark-theme-btn", "dark-mode");
 networkStatus();
+speechReader();

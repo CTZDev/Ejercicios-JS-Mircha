@@ -14,6 +14,9 @@ import searchFilter from "./js/search_filter.js";
 import digitalWinner from "./js/digital_giveaway.js";
 import sliderResponsive from "./js/slider.js";
 import scrollSpy from "./js/scrollSpy_intersection_observer.js";
+import playVideoScroll from "./js/video_obs_visibilityChange.js";
+import validityForm from "./js/form-validity.js";
+import voiceNarrator from "./js/voice_narrator.js";
 
 const d = document;
 
@@ -46,6 +49,9 @@ d.addEventListener("DOMContentLoaded", (e) => {
   digitalWinner("btnWinner");
   sliderResponsive(".slider", ".slide", ".slider-container .left", ".slider-container .right");
   scrollSpy();
+  playVideoScroll();
+  validityForm();
+  voiceNarrator();
 });
 
 d.addEventListener("keydown", (e) => {
